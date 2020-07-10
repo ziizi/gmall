@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en"  xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    hello thymeleaf;
+    <br>
+
+
+    <p th:text="${hello}">默认值</p>
+    <!-- 循环 -->
+    <p th:each="str:${list}" th:text="${str}"> </p>
+
+    <!-- 判断-->
+    <P th:if="1==1"> wo exist</P>
+    <input type="checkbox" th:checked="(${check}=='1')"/>
+
+    <!-- 三目运算符-->
+
+    <a th:href="'javascript:myFunction(\''+${hello}+'\')'"> click me </a>
+
+    <!-- 页面引入：动态引用和静态引用-->
+    <div th:include="indexinner::innerPart"> 页面引入</div>
+
+
+
+    <script language="JavaScript">
+
+        function myFunction(arg){
+            alert("myfunction 调用"+arg);
+        }
+    </script>
+
+
+
+</body>
+</html>
